@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+"name": "U-Portfolio Enhancer",
+"description": "인제대학교 의과대학 유포트폴리오 시스템을 수정해 POMR에서 뒤로가기나 닫기 버튼을 실수로 눌러도 바로 내용이 날아가지 않게끔 합니다.",
+"version": "1.5",
+"browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+"background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+"permissions": [
+    "activeTab",
+        "tabs",
+        "<all_urls>"
+  ],
+ "content_scripts": [
+   {
+     "matches": ["http://inje.u-folio.com/st/clinical-training/inpatient/pomr/create","http://inje.u-folio.com/st/clinical-training/inpatient/pomr/edit","http://inje.u-folio.com/st/clinical-training/outpatient/snapps/create","http://inje.u-folio.com/st/clinical-training/outpatient/snapps/edit","http://inje.u-folio.com/st/clinical-training/outpatient/final/edit","http://inje.u-folio.com/st/clinical-training/PBL/asgmt/create","http://inje.u-folio.com/st/clinical-training/PBL/asgmt/edit","http://inje.u-folio.com/st/clinical-training/week-plan/create","http://inje.u-folio.com/st/clinical-training/week-plan/edit","http://inje.u-folio.com/st/clinical-training/final-ref/create","http://inje.u-folio.com/st/clinical-training/final-ref/edit"],
+     "js": ["js/cs.js"]
+   }
+ ]
+}
